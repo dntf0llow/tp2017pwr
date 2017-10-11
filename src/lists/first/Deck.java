@@ -20,7 +20,7 @@ enum Ranks {
 
 public class Deck {
 
-    List<Card> cards;
+    ArrayList<Card> cards;
 
     public Deck(int amount) {
         cards = new ArrayList<Card>();
@@ -32,11 +32,6 @@ public class Deck {
                 cards.add(new Card (suit, rank));
             }
         }
-        showDeck();
-        shuffleDeck();
-        showDeck();
-        sortDeck();
-        showDeck();
     }
 
     public void shuffleDeck() {
@@ -57,9 +52,4 @@ public class Deck {
     public Card showTopCard() {
         return cards.get(cards.size() - 1);
     }
-
-    public static void main(String[] args) {
-        Deck deck = new Deck(52);
-    }
-
 }
