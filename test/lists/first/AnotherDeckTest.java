@@ -1,27 +1,22 @@
 package lists.first;
 
 import junit.framework.Assert;
-import junit.framework.TestCase;
+import org.junit.Before;
+import org.junit.Test;
 
-import java.util.ArrayList;
+import static org.junit.Assert.*;
 
+/**
+ * Created by kptox on 13.10.2017.
+ */
+public class AnotherDeckTest {
 
-public class DeckTest extends TestCase {
-
+    @Before
     public void setUp() throws Exception {
-        super.setUp();
+
     }
 
-    public void testShuffleDeck() throws Exception {
-        Deck deck = new Deck(52);
-
-        ArrayList<Card> tmpCards = new ArrayList<Card>();
-        tmpCards.addAll(deck.cards);
-
-        deck.shuffleDeck();
-        Assert.assertFalse(tmpCards.equals(deck.cards));
-    }
-
+    @Test
     public void testIfSetOfCardsIsProper() throws Exception {
         Deck deck_32 = new Deck (32);
         Card testCard = new Card(Suits.DIAMONDS, Ranks.SEVEN);
@@ -29,26 +24,20 @@ public class DeckTest extends TestCase {
         for (Card deckCard : deck_32.cards) {
             Assert.assertFalse(testCard.rank.compareTo(deckCard.rank) < 0);
         }
-
     }
 
+    @Test
     public void testEmptyDeck() throws Exception {
         Deck deck = new Deck(0);
 
         Assert.assertNotNull(deck.cards);
     }
 
+    @Test
     public void testIsTheRightSize() throws Exception {
         Deck deck = new Deck(52);
 
         Assert.assertTrue(deck.cards.size() == 52);
     }
 
-    public void testSortDeck() throws Exception {
-
-    }
-
-    public void testShowTopCard() throws Exception {
-
-    }
 }
