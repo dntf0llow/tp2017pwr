@@ -41,10 +41,6 @@ public class Card implements Comparable<Card>{
      * @return Integer value depending on the outcome of comparison.
      */
     public int compareTo(Card o) {
-        if (this.rank.equals(o.rank))
-            return this.suit.compareTo(o.suit);
-        else
-            return this.rank.compareTo(o.rank);
-
+        return this.rank.compareTo(o.rank);
     }
 }

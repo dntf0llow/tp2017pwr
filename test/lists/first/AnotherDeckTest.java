@@ -22,7 +22,7 @@ public class AnotherDeckTest {
         Card testCard = new Card(Suits.DIAMONDS, Ranks.SEVEN);
 
         for (Card deckCard : deck_32.cards) {
-            Assert.assertFalse(testCard.rank.compareTo(deckCard.rank) < 0);
+            Assert.assertFalse(testCard.compareTo(deckCard) < 0);
         }
     }
 
