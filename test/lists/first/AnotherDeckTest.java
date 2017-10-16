@@ -1,7 +1,9 @@
 package lists.first;
 
 import junit.framework.Assert;
+import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -16,6 +18,7 @@ public class AnotherDeckTest {
 
     }
 
+    @Ignore("Example use of Ignore")
     @Test
     public void testIfSetOfCardsIsProper() throws Exception {
         Deck deck_32 = new Deck (32);
@@ -26,18 +29,23 @@ public class AnotherDeckTest {
         }
     }
 
-    @Test
+    @Test(expected = IndexOutOfBoundsException.class)
     public void testEmptyDeck() throws Exception {
         Deck deck = new Deck(0);
 
         Assert.assertNotNull(deck.cards);
+        deck.cards.get(0);
     }
-
-    @Test
+    @Test(timeout = 200)
     public void testIsTheRightSize() throws Exception {
         Deck deck = new Deck(52);
 
         Assert.assertTrue(deck.cards.size() == 52);
+    }
+
+    @After
+    public void tearDown() throws Exception {
+
     }
 
 }
