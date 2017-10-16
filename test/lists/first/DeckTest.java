@@ -44,11 +44,10 @@ public class DeckTest extends TestCase {
         Assert.assertTrue(deck.cards.size() == 52);
     }
 
-    public void testSortDeck() throws Exception {
-
-    }
-
     public void testShowTopCard() throws Exception {
+        Deck deck = new Deck(24);
+        int lastIndex = deck.cards.size()-1;
 
+        Assert.assertSame(deck.showTopCard(), deck.cards.get(lastIndex) );
     }
 }

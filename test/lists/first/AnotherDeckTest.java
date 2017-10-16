@@ -18,7 +18,6 @@ public class AnotherDeckTest {
 
     }
 
-    @Ignore("Example use of Ignore")
     @Test
     public void testIfSetOfCardsIsProper() throws Exception {
         Deck deck_32 = new Deck (32);
@@ -41,6 +40,12 @@ public class AnotherDeckTest {
         Deck deck = new Deck(52);
 
         Assert.assertTrue(deck.cards.size() == 52);
+    }
+
+    @Ignore("Example use of ignore")
+    @Test
+    public void testTopCardShowed() throws Exception {
+
     }
 
     @After
